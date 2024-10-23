@@ -14,46 +14,31 @@ void printMenu() {
 	cout << "Your Selection: ";
 }
 void factorial() {
-	int input;//number user enters
-	int product = 1;
+	int n;
+	int i(1);
 
 	cout << "Factorial:" << endl;
 	cout << "Enter a positive number: ";
-	cin >> input;
+	cin >> n;
 
-	//positive numbers only
-	if (input < 0) 
-		//if user keeps entering positive numbers
-		while (input < 0) {
-			cout << "Nice try, please enter a POSITIVE number...: ";
-			cin >> input;
-		}
-
-	//factorial series
-	for (int i = 1; i <= input; i++) {
-
-		if (i == 1) {
-			cout << input << "! = ";
-			product = i * product;
-		}
-		else if (i == input) {
-			product = i * product;
-			cout << i << " = " << product << endl;
-		}
-		else {
-			product = i * product;
-			cout << i << " * ";
-		}
+	//if user keeps entering negative numbers
+	if (n < 0) {
+		cout << "Nice try, please enter a POSITIVE number...: ";
+		cin >> n;
 	}
+	else if (n >= 0) {
+
+		for (int i (1); i <= n; i++) {
+			i *= n;
+		};
+	}
+		cout << n << "! = " << i << endl;
+		
 }
 void arithmetic() {
-	int start;
-	int difference;
-	int series;
-	int nexNum;
-	int sum = 0;
 
-	cout << "Arithmetic Series:" << endl;
+
+	/*cout << "Arithmetic Series:" << endl;
 	cout << "Enter a number to start at: ";
 	cin >> start;
 	cout << "Enter a number to add each time: ";
@@ -61,7 +46,7 @@ void arithmetic() {
 	cout << "Enter the number of elements in the series(positive number): ";
 	cin >> series;
 
-	//positive numbers only
+	/*positive numbers only
 	if (series < 0)
 		//if user keeps entering positive numbers
 		while (series < 0) {
@@ -86,7 +71,7 @@ void arithmetic() {
 			cout << nexNum << " + ";
 			nexNum = nexNum + difference;
 		}
-	}
+	}*/
 }
 void geometric() {
 	
