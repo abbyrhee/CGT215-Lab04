@@ -22,12 +22,14 @@ void factorial()
 	cout << "Factorial:" << endl;
 	cout << "Enter a number: ";
 	cin >> input;
+
 	//if user enters negative number
 	while (input < 0)
 	{
 		cout << "Nice try, please enter a POSITIVE NUMBER...: ";
 		cin >> input;
 	}
+
 	//factorial series
 	if ( input >= 0)
 	{
@@ -50,7 +52,7 @@ void arithmetic()
 	int start;
 	int add;
 	int elements;
-	int total;
+	int total(0);
 
 	cout << "Arithmetic Series:" << endl;
 	cout << "Enter a number to start at: ";
@@ -59,20 +61,60 @@ void arithmetic()
 	cin >> add;
 	cout << "Enter the number of elements in the series: ";
 	cin >> elements;
+
 	//user must enter positive number of elements
 	while (elements < 0)
 	{
 		cout << "Nice try, please enter a POSITIVE NUMBER...: ";
 		cin >> elements;
 	}
+
 	//arithmetic series
-	for (int i(0); elements >= i; i++)
+	for (int i(0); elements > i; i++)
 	{
-		total += add;
-		cout << start;
+		if (i > 0)
+		{
+			cout << " + ";
+		}
+		cout << (start + (i * add));
+		total += (start + (i * add));
 	}
+	cout << " = " << total << endl;
 }
-void geometric() {
+void geometric()
+{
+	int start;
+	int multiply;
+	int elements;
+	int total(0);
+
+	cout << "Geometric Series:" << endl;
+	cout << "Enter a number to start at: ";
+	cin >> start;
+	cout << "Enter a number to multiply by each time: ";
+	cin >> multiply;
+	cout << "Enter the number of elements in the series: ";
+	cin >> elements;
+
+	//user must enter positive number of elements
+	while (elements < 0)
+	{
+		cout << "Nice try, please enter a POSITIVE NUMBER...: ";
+		cin >> elements;
+	}
+
+	//geometric series
+		for (int i(0); elements > i; i++)
+		{
+			if (i > 0)
+			{
+				cout << " + ";
+			}
+			cout << start;
+			total += start;
+			start *= multiply;
+		}
+	cout << " = " << total << endl;
 	
 }
 int main() {
