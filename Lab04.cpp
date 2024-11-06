@@ -5,7 +5,8 @@
 
 using namespace std;
 // Print out the menu of choices for the user to select from
-void printMenu() {
+void printMenu() 
+{
 	cout << "Please Select which operation to perform:" << endl;
 	cout << "\t1. Factorial" << endl;
 	cout << "\t2. Arithmetic Series" << endl;
@@ -13,65 +14,63 @@ void printMenu() {
 	cout << "\t4. Exit" << endl;
 	cout << "Your Selection: ";
 }
-void factorial() {
-	int n;
-	int i(1);
+void factorial()
+{
+	int input;
+	int total(1);
 
 	cout << "Factorial:" << endl;
-	cout << "Enter a positive number: ";
-	cin >> n;
-
-	//if user keeps entering negative numbers
-	if (n < 0) {
-		cout << "Nice try, please enter a POSITIVE number...: ";
-		cin >> n;
+	cout << "Enter a number: ";
+	cin >> input;
+	//if user enters negative number
+	while (input < 0)
+	{
+		cout << "Nice try, please enter a POSITIVE NUMBER...: ";
+		cin >> input;
 	}
-	else if (n >= 0) {
-
-		for (int i (1); i <= n; i++) {
-			i *= n;
-		};
+	//factorial series
+	if ( input >= 0)
+	{
+		cout << input << "! =";
+		for (int i(1); i <= input; i++)
+		{
+			total *= i;
+			cout << i;
+			if (i < input)
+			{
+				cout << " * ";
+			}
+		}
 	}
-		cout << n << "! = " << i << endl;
-		
+	cout << " = " << total << endl;
+	
 }
-void arithmetic() {
+void arithmetic()
+{
+	int start;
+	int add;
+	int elements;
+	int total;
 
-
-	/*cout << "Arithmetic Series:" << endl;
+	cout << "Arithmetic Series:" << endl;
 	cout << "Enter a number to start at: ";
 	cin >> start;
 	cout << "Enter a number to add each time: ";
-	cin >> difference;
-	cout << "Enter the number of elements in the series(positive number): ";
-	cin >> series;
-
-	/*positive numbers only
-	if (series < 0)
-		//if user keeps entering positive numbers
-		while (series < 0) {
-			cout << "Positive number only: ";
-			cin >> series;
-		}
-
+	cin >> add;
+	cout << "Enter the number of elements in the series: ";
+	cin >> elements;
+	//user must enter positive number of elements
+	while (elements < 0)
+	{
+		cout << "Nice try, please enter a POSITIVE NUMBER...: ";
+		cin >> elements;
+	}
 	//arithmetic series
-	for (int i = 0; series > i; i++) {
-
-		if (i == 0) {
-			sum = start;
-			cout << start << " + ";
-			nexNum = start + difference;
-		}
-		else if (i == (series - 1)) {
-			sum = sum + nexNum;
-			cout << nexNum << " = " << sum << endl;
-		}
-		else {
-			sum = sum + nexNum;
-			cout << nexNum << " + ";
-			nexNum = nexNum + difference;
-		}
-	}*/
+	for (int i(0); elements >= i; i++)
+	{
+		total += add;
+		cout << start;
+	}
 }
 void geometric() {
 	
