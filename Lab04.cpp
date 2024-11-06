@@ -117,23 +117,29 @@ void geometric()
 	cout << " = " << total << endl;
 	
 }
-int main() {
+int main() 
+{
 	int choice;
 	char again;
-	do {
+	do 
+	{
 		printMenu();
 		cin >> choice;
 		// Quit if user chooses to exit (or any invalid choice)
-		if (choice > 3 || choice < 1) {
+		if (choice > 3 || choice < 1) 
+		{
 			return 0;
 		}
-		else if (choice == 1) {
+		else if (choice == 1) 
+		{
 			factorial();
 		}
-		else if (choice == 2) {
+		else if (choice == 2) 
+		{
 			arithmetic();
 		}
-		else if (choice == 3) {
+		else if (choice == 3) 
+		{
 			geometric();
 		}
 		cout << "Go Again? [Y/N] ";
